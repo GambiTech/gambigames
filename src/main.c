@@ -56,7 +56,7 @@ SDL_Init(SDL_INIT_VIDEO); //INICIA VIDEO COM SDL
 renderer =  SDL_CreateRenderer( janela, -1, SDL_RENDERER_ACCELERATED); //DEFINE RENDERER
 
 // TESTA SE O "renderer" FOI realmente CRIADo
- if (janela == NULL) {
+ if (renderer == NULL) {
         printf("Falha ao iniciar o renderer!\n erro: %s\n", SDL_GetError()); //IMPRIME MENSAGEM DE ERRO COM O NUMERO DO ERRO INTERNO DO SDL
         return 1; //TERMINA O PROGRAMA COM ERRO
    }
