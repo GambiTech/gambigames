@@ -34,62 +34,15 @@ PROGRAMA PRINCIPAL DO JOGO
 #include <SDL2/SDL_ttf.h> //textos
 #include <SDL2/SDL_image.h> //formatos de imagens e texturas
 #include <SDL2/SDL_mixer.h> //sons multicanais
-
+#include "lib/include/telainicial.h" //inclui os arquivos da tela inicial
 //FUNÇÃO PRINCIPAL
 int main(int argc, char *argv[]){
 
-// CRIA UMA NOVA JANELA
-SDL_Init(SDL_INIT_VIDEO); //INICIA VIDEO COM SDL 
- SDL_Window *janela=NULL; // CRIA UMA JANELA 
- SDL_Renderer *renderer=NULL;// CIRA UM RENDERER 
- 
- janela=  SDL_CreateWindow("janela0",0,0,800,600,SDL_WINDOW_RESIZABLE); //DEFINE A JANELA 
-// JANELA CRIADA
-
-// TESTA SE A "janela" FOI realmente CRIADA
- if (janela == NULL) {
-        printf("Falha ao iniciar a janela!\n erro: %s\n", SDL_GetError()); //IMPRIME MENSAGEM DE ERRO COM O NUMERO DO ERRO INTERNO DO SDL
-        return 1; //TERMINA O PROGRAMA COM ERRO
-   }
-// FIM DO TESTE
-
-renderer =  SDL_CreateRenderer( janela, -1, SDL_RENDERER_ACCELERATED); //DEFINE RENDERER
-
-// TESTA SE O "renderer" FOI realmente CRIADo
- if (renderer == NULL) {
-        printf("Falha ao iniciar o renderer!\n erro: %s\n", SDL_GetError()); //IMPRIME MENSAGEM DE ERRO COM O NUMERO DO ERRO INTERNO DO SDL
-        return 1; //TERMINA O PROGRAMA COM ERRO
-   }
-// FIM DO TESTE
-
-
-SDL_SetRenderDrawColor( renderer, 255, 0, 0, 255 );// cor de fundo vermelho
-        SDL_RenderClear(renderer); //limpa o renderer
-
-SDL_RenderPresent(renderer);//rederiza
-
-SDL_Delay(1000);  //DA UM TEMPO DE 1 SEGUNDO COM A JANELA 
-
-
-SDL_SetRenderDrawColor( renderer, 0, 255, 0, 255 );// cor de fundo verde
-        SDL_RenderClear(renderer); //limpa o renderer
-
-SDL_RenderPresent(renderer);//rederiza
-
-SDL_Delay(1000);  //DA UM TEMPO DE 1 SEGUNDO COM A JANELA 
-
-
-SDL_SetRenderDrawColor( renderer, 0, 0, 255, 255 );// cor de fundo azul
-        SDL_RenderClear(renderer); //limpa o renderer
-
-SDL_RenderPresent(renderer);//rederiza
-
-SDL_Delay(1000);  //DA UM TEMPO DE 1 SEGUNDO COM A JANELA 
-
-    SDL_DestroyWindow(janela); // TERMINA A JANELA 
 
     
-    SDL_Quit(); // ENCERRA O SDL
+ tela();
+    
+
 
 return 0; // TERMINA O PROGRAMA SEM ERROS
 
