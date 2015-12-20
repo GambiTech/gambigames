@@ -1,9 +1,0 @@
-#include <stdio.h>
-#include "../includes/telainicial.h"
-
-int tela(){
-    
-    printf("asdfasdfa asdfasdf asdfasdf \n asdf asdf adsf \n asdf \n");
-    
-    return 0;
-    }

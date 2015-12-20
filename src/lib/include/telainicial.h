@@ -2,7 +2,7 @@
 #define TELAINICIAL_H_INCLUDED
 
 
-int tela();
+int tela(void* data );
 
 
 

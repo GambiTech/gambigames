@@ -35,13 +35,24 @@ PROGRAMA PRINCIPAL DO JOGO
 #include <SDL2/SDL_image.h> //formatos de imagens e texturas
 #include <SDL2/SDL_mixer.h> //sons multicanais
 #include "lib/include/telainicial.h" //inclui os arquivos da tela inicial
+#include <SDL_thread.h>
 //FUNÇÃO PRINCIPAL
 int main(int argc, char *argv[]){
+int rtnv;
+ SDL_Thread* threadID =SDL_CreateThread( tela, "LazyThread", (void*) NULL );
 
 
+
+ 
+ if (NULL == threadID) {
+        printf("\nSDL_CreateThread failed: %s\n", SDL_GetError());
+    } else {
+        SDL_WaitThread(threadID, &rtnv);
+        printf("\nThread returned value: %d", rtnv);
+    }
+
     
- tela();
-    
+   
 
 
 return 0; // TERMINA O PROGRAMA SEM ERROS
